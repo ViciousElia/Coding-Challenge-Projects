@@ -1,0 +1,5 @@
+[gd_resource type="ButtonGroup" format=3 uid="uid://8b06s61rrq2m"]
+
+[resource]
+resource_local_to_scene = false
+resource_name = "ModesGroup"
