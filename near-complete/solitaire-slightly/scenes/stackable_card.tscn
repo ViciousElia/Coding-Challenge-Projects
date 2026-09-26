@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dl38nrgosekfg"]
+
+[ext_resource type="Script" uid="uid://cvgxyhunon0k1" path="res://scripts/stackable_card.gd" id="1_5jgsp"]
+
+[node name="StackableCard" type="TextureRect" unique_id=1078050488]
+custom_minimum_size = Vector2(160, 256)
+mouse_filter = 2
+script = ExtResource("1_5jgsp")
+card_value = 1
+metadata/_custom_type_script = "uid://48tc1uhd7vgb"
+
+[connection signal="child_entered_tree" from="." to="." method="_on_card_entered"]
+[connection signal="child_exiting_tree" from="." to="." method="_on_card_leaving"]
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

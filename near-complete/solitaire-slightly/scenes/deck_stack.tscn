@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bh0ueabcspi5s"]
+
+[ext_resource type="Script" uid="uid://c68lub7uj0uig" path="res://scripts/deck_stack.gd" id="1_8445m"]
+
+[node name="DeckStack" type="TextureRect" unique_id=1299707635]
+custom_minimum_size = Vector2(160, 256)
+script = ExtResource("1_8445m")
+stack_direction = 1
+metadata/_custom_type_script = "uid://48tc1uhd7vgb"
+
+[node name="ActionButton" type="TextureButton" parent="." unique_id=1498438648]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="ActionButton" to="." method="_on_action_button_pressed"]

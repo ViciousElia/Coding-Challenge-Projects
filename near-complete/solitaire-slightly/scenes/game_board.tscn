@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://ck817sllmj7a8"]
+
+[ext_resource type="Script" uid="uid://fjfr4455kk1v" path="res://scripts/game_board.gd" id="1_17g6i"]
+[ext_resource type="PackedScene" uid="uid://bh0ueabcspi5s" path="res://scenes/deck_stack.tscn" id="1_i37i2"]
+[ext_resource type="PackedScene" uid="uid://pkv4r52nrrpa" path="res://scenes/discard_stack.tscn" id="2_17g6i"]
+[ext_resource type="PackedScene" uid="uid://di7nggtymvbli" path="res://scenes/goal_stack.tscn" id="4_30eli"]
+[ext_resource type="PackedScene" uid="uid://dbbtwbmscjrb8" path="res://scenes/field_stack.tscn" id="4_xh13x"]
+
+[node name="GameBoard" type="VBoxContainer" unique_id=536657078]
+custom_minimum_size = Vector2(1200, 836)
+offset_right = 1200.0
+offset_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_17g6i")
+
+[node name="TopRow" type="HBoxContainer" parent="." unique_id=999011975]
+layout_mode = 2
+
+[node name="DeckAndDiscard" type="HBoxContainer" parent="TopRow" unique_id=1078375239]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DeckStack" parent="TopRow/DeckAndDiscard" unique_id=1299707635 instance=ExtResource("1_i37i2")]
+layout_mode = 2
+stretch_mode = 2
+
+[node name="Control1" type="Control" parent="TopRow/DeckAndDiscard" unique_id=341845391]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DiscardStack" parent="TopRow/DeckAndDiscard" unique_id=1238386817 instance=ExtResource("2_17g6i")]
+layout_mode = 2
+stretch_mode = 2
+
+[node name="Control1" type="Control" parent="TopRow" unique_id=1706466648]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GoalContainer" type="HBoxContainer" parent="TopRow" unique_id=62889508]
+layout_mode = 2
+
+[node name="GoalStack1" parent="TopRow/GoalContainer" unique_id=2123378686 instance=ExtResource("4_30eli")]
+layout_mode = 2
+
+[node name="Control1" type="Control" parent="TopRow/GoalContainer" unique_id=424821648]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GoalStack2" parent="TopRow/GoalContainer" unique_id=2000986865 instance=ExtResource("4_30eli")]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="TopRow/GoalContainer" unique_id=1162280272]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GoalStack3" parent="TopRow/GoalContainer" unique_id=1100082323 instance=ExtResource("4_30eli")]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="TopRow/GoalContainer" unique_id=420114571]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GoalStack4" parent="TopRow/GoalContainer" unique_id=154442390 instance=ExtResource("4_30eli")]
+layout_mode = 2
+
+[node name="FieldContainer" type="HBoxContainer" parent="." unique_id=1154920729]
+layout_mode = 2
+alignment = 1
+
+[node name="FieldStack1" parent="FieldContainer" unique_id=231583272 instance=ExtResource("4_xh13x")]
+layout_mode = 2
+
+[node name="Control1" type="Control" parent="FieldContainer" unique_id=1063506584]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FieldStack2" parent="FieldContainer" unique_id=2108609199 instance=ExtResource("4_xh13x")]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="FieldContainer" unique_id=137194466]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FieldStack3" parent="FieldContainer" unique_id=748861427 instance=ExtResource("4_xh13x")]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="FieldContainer" unique_id=647608317]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FieldStack4" parent="FieldContainer" unique_id=1221023282 instance=ExtResource("4_xh13x")]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="FieldContainer" unique_id=769961942]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FieldStack5" parent="FieldContainer" unique_id=908116588 instance=ExtResource("4_xh13x")]
+layout_mode = 2
+
+[node name="Control5" type="Control" parent="FieldContainer" unique_id=1620439222]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FieldStack6" parent="FieldContainer" unique_id=871991342 instance=ExtResource("4_xh13x")]
+layout_mode = 2
+
+[node name="Control6" type="Control" parent="FieldContainer" unique_id=1200264204]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FieldStack7" parent="FieldContainer" unique_id=552445605 instance=ExtResource("4_xh13x")]
+layout_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pass_cards" from="TopRow/DeckAndDiscard/DeckStack" to="." method="_on_deck_stack_pass_cards"]
+[connection signal="pull_cards" from="TopRow/DeckAndDiscard/DeckStack" to="." method="_on_deck_stack_pull_cards"]
+[connection signal="ready_to_deal" from="TopRow/DeckAndDiscard/DeckStack" to="." method="_on_deck_stack_ready_to_deal"]

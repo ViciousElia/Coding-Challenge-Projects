@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://di7nggtymvbli"]
+
+[ext_resource type="Script" uid="uid://ypjjf14tt35c" path="res://scripts/goal_stack.gd" id="1_0clim"]
+
+[node name="GoalStack" type="TextureRect" unique_id=2123378686]
+custom_minimum_size = Vector2(160, 256)
+script = ExtResource("1_0clim")
+stack_type = 2
+stack_order = 1
+drag_and_drop = 3
+metadata/_custom_type_script = "uid://48tc1uhd7vgb"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

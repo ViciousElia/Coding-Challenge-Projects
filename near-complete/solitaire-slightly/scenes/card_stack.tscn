@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://rxcxx46jrena"]
+
+[ext_resource type="Script" uid="uid://48tc1uhd7vgb" path="res://scripts/card_stack.gd" id="1_lc0e1"]
+
+[node name="CardStack" type="TextureRect" unique_id=314320624]
+custom_minimum_size = Vector2(160, 256)
+offset_right = 160.0
+offset_bottom = 256.0
+script = ExtResource("1_lc0e1")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dbbtwbmscjrb8"]
+
+[ext_resource type="Script" uid="uid://d14h6422415t0" path="res://scripts/field_stack.gd" id="1_gwce5"]
+
+[node name="FieldStack" type="TextureRect" unique_id=231583272]
+custom_minimum_size = Vector2(160, 256)
+script = ExtResource("1_gwce5")
+stack_type = 1
+stack_direction = 2
+stack_order = 2
+drag_and_drop = 15
+metadata/_custom_type_script = "uid://48tc1uhd7vgb"
+
+[node name="ActionButton" type="TextureButton" parent="." unique_id=1281499966]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="ActionButton" to="." method="_on_action_button_pressed"]

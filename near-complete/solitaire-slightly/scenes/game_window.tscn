@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dgvsf472mgqs1"]
+
+[ext_resource type="Script" uid="uid://bwehr4jqy1hwh" path="res://scripts/game_window.gd" id="1_wyien"]
+[ext_resource type="PackedScene" uid="uid://ck817sllmj7a8" path="res://scenes/game_board.tscn" id="2_5snyb"]
+
+[node name="GameWindow" type="VBoxContainer" unique_id=530553267]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wyien")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1263435540]
+layout_mode = 2
+
+[node name="DeckSelector" type="HBoxContainer" parent="HBoxContainer" unique_id=1415433988]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+alignment = 1
+
+[node name="Deck1" type="TextureButton" parent="HBoxContainer/DeckSelector" unique_id=922568750]
+custom_minimum_size = Vector2(40, 64)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Deck2" type="TextureButton" parent="HBoxContainer/DeckSelector" unique_id=1392383569]
+custom_minimum_size = Vector2(40, 64)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Deck3" type="TextureButton" parent="HBoxContainer/DeckSelector" unique_id=410869058]
+custom_minimum_size = Vector2(40, 64)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Deck4" type="TextureButton" parent="HBoxContainer/DeckSelector" unique_id=1695990399]
+custom_minimum_size = Vector2(40, 64)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CountSelector" type="HBoxContainer" parent="HBoxContainer" unique_id=1485063280]
+layout_mode = 2
+
+[node name="Deal1" type="TextureButton" parent="HBoxContainer/CountSelector" unique_id=1360750496]
+custom_minimum_size = Vector2(40, 64)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Deal2" type="TextureButton" parent="HBoxContainer/CountSelector" unique_id=2050880673]
+custom_minimum_size = Vector2(40, 64)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Deal3" type="TextureButton" parent="HBoxContainer/CountSelector" unique_id=1954601152]
+custom_minimum_size = Vector2(40, 64)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CenterContainer" type="AspectRatioContainer" parent="." unique_id=1906544195]
+layout_mode = 2
+ratio = 1.3333
+
+[node name="GameBoard" parent="CenterContainer" unique_id=536657078 instance=ExtResource("2_5snyb")]
+layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/DeckSelector/Deck1" to="." method="_on_deck_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/DeckSelector/Deck2" to="." method="_on_deck_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/DeckSelector/Deck3" to="." method="_on_deck_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/DeckSelector/Deck4" to="." method="_on_deck_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/CountSelector/Deal1" to="." method="_on_deal_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/CountSelector/Deal2" to="." method="_on_deal_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/CountSelector/Deal3" to="." method="_on_deal_3_pressed"]
